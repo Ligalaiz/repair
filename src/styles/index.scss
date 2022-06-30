@@ -1,2 +1,7 @@
 @use "fonts";
 @use "global";
+@use "../pug/components/commonBtn/CommonBtn.style.scss";
+@use "../pug/components/header/Header.style.scss";
+@use "../pug/components/promo/Promo.style.scss";
+@use "../pug/components/navigation/Navigation.style.scss";
+@use "../pug/components/footer/Footer.style.scss";
