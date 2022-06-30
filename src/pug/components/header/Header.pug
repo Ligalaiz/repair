@@ -1,0 +1,14 @@
+-
+  const navItems = [
+    {
+      id: 'contact',
+      title: 'Контакты',
+    },
+  ];
+
+mixin Header
+    header.header#header
+      .header__logo.logo
+        a.logo__link(href="/")
+          include ../../../assets/img/logo.svg
+      +Navigation(navItems)

@@ -1,0 +1,13 @@
+mixin Navigation(navItems)
+  nav.header__menu.menu
+        ul.menu__list.reset-list
+          each item in navItems
+            li.menu__item(class= `menu__item--${item.id}`)
+              a.menu__link(
+                href= `${item.pathName ? item.pathName + '.html' : '#'}`
+                class= `menu__link--${item.id}`
+              )
+                if item.id === 'contact'
+                  .menu__img.img-menu
+                    include ../../../assets/img/phone.svg
+                p= item.title
