@@ -1,0 +1,149 @@
+@import '../../../styles/internals';
+
+.promo {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 96rem) minmax(auto, 96rem) 1fr;
+
+  height: 100vh;
+
+  &__left {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    grid-template: 1fr minmax(auto, 9rem) / minmax(auto, 8rem) minmax(auto, 50.8rem) 1fr;
+    padding: 2rem;
+  }
+
+  &__anchor {
+    grid-column: 2 / 3;
+    display: flex;
+    align-self: end;
+    gap: 1.2rem;
+    max-width: 25rem;
+    padding-bottom: 2rem;
+
+    font-weight: 500;
+    @include fontz(1.6rem, 1.125, $orange-color);
+    letter-spacing: -0.001rem;
+
+    &:hover .promo__arrows:before,
+    &:hover .promo__arrows:after {
+      transform: translateX(-50%) rotate(45deg) skew(10deg, 10deg);
+    }
+  }
+
+  &__arrows {
+    position: relative;
+
+    width: 4rem;
+    height: 4rem;
+
+    &:before {
+      content: '';
+
+      position: absolute;
+      left: 50%;
+      top: 0.5rem;
+
+      width: 1rem;
+      height: 1rem;
+      border: 2px solid $orange-color;
+      border-top: none;
+      border-left: none;
+
+      transform: translateX(-50%) rotate(45deg);
+      transition: all 0.2s linear;
+    }
+
+    &:after {
+      content: '';
+
+      position: absolute;
+      left: 50%;
+      top: 1rem;
+
+      width: 2rem;
+      height: 2rem;
+      border: 2px solid $orange-color;
+      border-top: none;
+      border-left: none;
+
+      transform: translateX(-50%) rotate(45deg);
+      transition: all 0.2s linear;
+    }
+  }
+
+  &__right {
+    position: relative;
+
+    grid-column: 3 / 4;
+    padding: 2rem;
+  }
+
+  &__content {
+    grid-column: 2 / 3;
+
+    align-self: center;
+  }
+
+  &__title {
+    margin-bottom: 2.7rem;
+
+    font-weight: 500;
+    @include fontz(6.4rem, 1, $black-color);
+    letter-spacing: -0.05rem;
+  }
+
+  &__subtitle {
+    margin-bottom: 4.4rem;
+
+    @include fontz(2.1rem, 1.4, $black-color);
+    letter-spacing: -0.001rem;
+  }
+
+  &__desc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  &__text {
+    @include fontz(1.6rem, 1.5, $grey-color);
+    letter-spacing: -0.001rem;
+  }
+}
+
+.img-play {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.right-promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__play {
+    position: relative;
+
+    width: 25rem;
+    padding-bottom: 25rem;
+    margin-bottom: 1.9em;
+
+    &:hover .img-play {
+      transform: scale(1.3) translate(-3rem, -3rem);
+    }
+  }
+
+  &__bg {
+    padding: 2rem;
+    padding-left: unset;
+  }
+
+  &__text {
+    position: relative;
+
+    @include fontz(2.1rem, 1.42, $orange-color);
+  }
+}
