@@ -5,11 +5,11 @@
   top: 0;
 
   display: grid;
-  grid-template-columns: 1fr minmax(auto, 85rem) minmax(auto, 85rem) 1fr;
+  grid-template-columns: 1fr minmax(auto, 8rem) minmax(auto, 86rem) minmax(auto, 86rem) minmax(auto, 8rem) 1fr;
   align-items: center;
   width: 100%;
-  margin-top: 2rem;
-  padding: 2.1rem 1.5rem;
+  min-width: 31.5rem;
+  padding: 4.2rem 1.5rem 2.1rem;
 
   background-color: transparent;
 
@@ -17,23 +17,24 @@
   z-index: 500;
 
   &__logo {
-    position: relative;
-
-    grid-column: 2 / 3;
-    width: 20rem;
+    grid-column: 3 / 4;
+    width: 21rem;
     height: 6.8rem;
+    padding-left: 1rem;
+    margin-left: 1.8rem;
 
     cursor: pointer;
   }
 
   &__menu {
-    grid-column: 3 / 4;
+    grid-column: 4 / 5;
   }
 
   &.active {
+    margin-top: 0;
     padding: 1rem 0;
 
-    background-color: $orange-color;
+    background-color: $green-color-light;
   }
 }
 
@@ -41,20 +42,24 @@
   &__list {
     justify-content: end;
     display: grid;
-    grid-template-columns: 1fr minmax(auto, 13rem);
+    grid-template-columns: 1fr minmax(auto, 16rem);
   }
 
   &__item {
     &--contact {
       grid-column: 2 / 3;
+      padding-right: 2.8rem;
     }
   }
 }
 
 .logo__link {
+  position: relative;
+
   display: inline-block;
   height: 6.8rem;
   width: 20rem;
+  padding-right: 1rem;
 }
 
 .symbol__item {
@@ -100,13 +105,24 @@
   }
 }
 
+@media (max-width: 1104px) {
+  .header {
+    grid-template-columns: 1fr minmax(auto, 5rem) minmax(auto, 86rem) minmax(auto, 86rem) 1fr;
+  }
+}
+
 @media (max-width: 991.98px) {
   .header {
+    grid-template-columns: 1fr minmax(auto, 86rem) minmax(auto, 86rem) 1fr;
     margin-top: unset;
 
     &__container {
       min-height: 7rem;
       padding: 0 1.5rem;
+    }
+
+    &__logo {
+      grid-column: 2 / 3;
     }
   }
 }
@@ -114,12 +130,18 @@
 @media (max-width: 767.98px) {
   .header {
     padding: 1rem 1.5rem;
-    }
+  }
 }
 
 @media (max-width: 575.98px) {
   .logo {
+    padding: 0;
     height: 4.5rem;
     width: 17rem;
+
+    &__link {
+      height: 4.5rem;
+      width: 17rem;
+    }
   }
 }
