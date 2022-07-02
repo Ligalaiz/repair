@@ -1,0 +1,24 @@
+mixin Feedback
+  section.feedback#feedback
+    h2.visually-hidden Подписка
+    .container
+      fieldset.feedback__wrapper
+        legend.feedback__title Узнайте о запуске сервиса первым
+        .feedback__subtitle.subtitle-feedback
+          .subtitle-feedback__img
+            img(src= require(`../../assets/img/door.svg`), alt="door")
+          p.subtitle-feedback__text Первым 10 клиентам стальная входная дверь в подарок
+        form.feedback__form.form-feedback#form
+          .form-feedback__wrap
+            .form-feedback__item
+              input.form-feedback__field.form-feedback__field--name#nameField(type="text" placeholder= " " required)
+              label.form-feedback__label Имя и фамилия*
+            .form-feedback__item
+              input.form-feedback__field.form-feedback__field--email#emailField(type="email" placeholder= " " pattern="[^ @]*@[^ @]*" required)
+              label.form-feedback__label Е-mail адрес*
+            .form-feedback__item
+              input.form-feedback__field.form-feedback__field--phone#phoneField(type="tel" placeholder= " ")
+              label.form-feedback__label Телефон
+          +CommonBtn('Подписаться', 'form-feedback', 'submit')
+          p.form-feedback__note *Обязательные для заполнения поля
+          a.form-feedback__policy(href="#") Политика конфиденциальности
