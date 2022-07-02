@@ -1,0 +1,36 @@
+-
+  const fixList = [
+    {
+      id: 1,
+      title: 'Опытная команда',
+      text: 'Команда проектировщиков и строителей со стажем работы более 6 лет'
+    },
+    {
+      id: 2,
+      title: 'Типовые дизайн-проекты',
+      text: 'Три стиля чистовой отделки «под ключ» и спектр дополнительных услуг'
+    },
+    {
+      id: 3,
+      title: 'Фиксированная смета',
+      text: 'Никаких дополнительных расходов во время ремонта. Расчет стоимости при заключении договора'
+    },
+    {
+      id: 4,
+      title: 'Срок работ',
+      text: '3 месяца'
+    },
+  ]
+
+
+mixin Fix
+  section.fix#fix
+    .fix__container
+      .fix__head
+        h2.fix__title FIX Ремонт — это легко
+        p.fix__subtitle Готовые проекты, проверенные материалы и умелые руки
+      ul.fix__body.reset-list
+        each fixItem in fixList
+          li.fix__item.item-fix(class= `item-fix--${fixItem.id}`)
+            .item-fix__title= fixItem.title
+            .item-fix__text= fixItem.text
