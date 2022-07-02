@@ -1,0 +1,41 @@
+-
+  const interiorStyles = [
+    {
+      id: 1,
+      title: 'Кафельная плитка в ванной комнате в скандинавском стиле',
+      desc: 'bathroom',
+      status: ''
+    },
+    {
+      id: 1,
+      title: 'Кафельная плитка в ванной комнате в скандинавском стиле',
+      desc: 'bathroom',
+      status: 'active'
+    },
+    {
+      id: 1,
+      title: 'Кафельная плитка в ванной комнате в скандинавском стиле',
+      desc: 'bathroom',
+      status: ''
+    },
+  ]
+
+mixin Interior
+  section.interior
+    .interior__container
+      .container
+        .interior__head
+          .interior__title 3 стиля интерьера
+          .interior__subtitle Скандинавский, классический и эко-стиль
+      .interior__body
+        .interior__slider.slider-interior
+          ul.slider-interior__list.reset-list
+            each slide in interiorStyles
+              li.slider-interior__slide(class= `${slide.status === 'active' ? 'active' : ''}`)
+                .slider-interior__img
+                  img(src=require(`../../assets/img/slide${slide.id}@1x.jpg`), alt=`${slide.desc}`)
+                if (slide.status === 'active')
+                  .slider-interior__desc= slide.title
+          .slider-interior__controls.slider-controls
+            button.slider-controls__prev#btnPrev
+            button.slider-controls__next#btnNext
