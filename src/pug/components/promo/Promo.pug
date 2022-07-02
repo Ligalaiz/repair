@@ -1,0 +1,20 @@
+mixin Promo
+  section.promo#promo
+    .promo__left
+      .promo__content
+        h1.promo__title Ремонт квартир в типовых домах
+        p.promo__subtitle Готовый дизайн-проект, работы и материалы за 3 месяца от 610 т.р.
+        .promo__desc
+          a.promo__btn.common-btn(href= "#feedback") Узнайте и запуске первым
+          p.promo__text Старт весной 2016
+      a.promo__anchor(href= "#fix")
+        .promo__arrows
+        p Листайте вниз, чтобы&nbsp;ничего не упустить
+    .promo__right.right-promo
+      picture
+        source(srcset=`${require("../../assets/img/promo@3x.webp")} 3x, ${require("../../assets/img/promo@2x.webp")} 2x, ${require("../../assets/img/promo@1x.webp")} 1x, `, type="image/webp" )
+        img(src=require("../../assets/img/promo@1x.jpg"), srcset= `${require("../../assets/img/promo@2x.jpg")} 2x, ${require("../../assets/img/promo@1x.jpg")} 1x, ${require("../../assets/img/promo@3x.jpg")} 3x`, alt="promo" class="right-promo__bg")
+      .right-promo__wrap
+        .right-promo__play
+          include ../../../assets/img/play.svg
+        p.right-promo__text Смотреть видео

@@ -1,0 +1,268 @@
+@import '../../../styles/internals';
+
+.promo {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 93rem) minmax(auto, 97rem) 1fr;
+
+  height: 100vh;
+
+  &__left {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    grid-template: 14rem 1fr minmax(auto, 9rem) / minmax(auto, 11rem) minmax(auto, 50.8rem) 1fr;
+    padding: 1rem;
+  }
+
+  &__anchor {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    display: flex;
+    align-self: center;
+    gap: 1.2rem;
+    max-width: 26rem;
+    padding-bottom: 2rem;
+
+    font-weight: 500;
+    @include fontz(1.6rem, 1.125, $orange-color);
+    letter-spacing: -0.001rem;
+
+    cursor: pointer;
+
+    &:hover .promo__arrows:before,
+    &:hover .promo__arrows:after {
+      transform: translateX(-50%) rotate(45deg) skew(10deg, 10deg);
+    }
+  }
+
+  &__arrows {
+    position: relative;
+
+    width: 7rem;
+    height: 4rem;
+
+    &:before {
+      content: '';
+
+      position: absolute;
+      left: 50%;
+      top: -0.5rem;
+
+      width: 1.8rem;
+      height: 1.8rem;
+      border: 2px solid $orange-color;
+      border-top: none;
+      border-left: none;
+
+      transform: translateX(-50%) rotate(45deg);
+      transition: all 0.2s linear;
+    }
+
+    &:after {
+      content: '';
+
+      position: absolute;
+      left: 50%;
+      top: 0;
+
+      width: 3rem;
+      height: 3rem;
+      border: 2px solid $orange-color;
+      border-top: none;
+      border-left: none;
+
+      transform: translateX(-50%) rotate(45deg);
+      transition: all 0.2s linear;
+    }
+  }
+
+  &__right {
+    position: relative;
+
+    grid-column: 3 / 4;
+    padding: 2rem;
+  }
+
+  &__content {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    align-self: center;
+    padding-bottom: 8.4rem;
+  }
+
+  &__title {
+    position: relative;
+    left: -0.4rem;
+
+    margin-bottom: 2.7rem;
+
+    font-weight: 500;
+    @include fontz(6.4rem, 1, $black-color);
+    letter-spacing: -0.05rem;
+  }
+
+  &__subtitle {
+    max-width: 46rem;
+    margin-bottom: 4.3rem;
+
+    @include fontz(2.1rem, 1.4, $black-color);
+    letter-spacing: -0.001rem;
+  }
+
+  &__desc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  &__text {
+    @include fontz(1.6rem, 1.5, $grey-color);
+    letter-spacing: -0.001rem;
+  }
+
+  &__btn {
+    padding: 1.7rem 3rem;
+  }
+}
+
+.img-play {
+  transform: translate(0.2rem, 0.2rem);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.right-promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 25rem;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 2rem 6.6rem 0;
+  }
+
+  &__play {
+    position: relative;
+
+    width: 27rem;
+    padding-bottom: 26rem;
+    margin-bottom: 1rem;
+
+    &:hover .img-play {
+      transform: scale(1.3) translate(-3rem, -3rem);
+    }
+  }
+
+  &__bg {
+    padding: 2rem 2.8rem 2rem 0;
+  }
+
+  &__text {
+    position: relative;
+
+    @include fontz(2.1rem, 1.42, $orange-color);
+  }
+}
+
+@media (max-width: 1104px) {
+  .promo {
+    &__left {
+      grid-template-columns: minmax(auto, 5rem) minmax(auto, 50.8rem) 1fr;
+    }
+
+    &__title {
+      font-size: 4.4rem;
+    }
+
+    &__subtitle {
+      font-size: 1.8rem;
+    }
+
+    &__desc {
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .promo {
+    &__left {
+      grid-template: 11rem 1fr minmax(auto, 9rem) / 1fr;
+    }
+  }
+
+  .right-promo {
+    &__play {
+      width: 20rem;
+      padding-bottom: 20rem;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .promo {
+    grid-template: 1fr 1fr / 1fr;
+
+    &__left {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      grid-template-rows: 8rem 1fr minmax(auto, 9rem);
+    }
+
+    &__right {
+      grid-column: 1/2;
+      grid-row: 2/2;
+    }
+
+    &__title {
+      margin-bottom: 2rem;
+
+      font-size: 3rem;
+    }
+
+    &__subtitle {
+      margin-bottom: 4rem;
+
+      font-size: 1.5rem;
+    }
+
+    &__anchor,
+    &__content {
+      grid-column: 1 / 2;
+    }
+
+    &__content {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    &__desc {
+      justify-content: center;
+    }
+  }
+
+  .right-promo {
+    &__play {
+      width: 16rem;
+      padding-bottom: 12rem;
+      margin-bottom: 1rem;
+    }
+
+    &__text {
+      font-size: 1.8rem;
+    }
+
+    &__bg {
+      padding: 1.5rem;
+    }
+  }
+}

@@ -17,7 +17,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg|webp)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'assets/img/[name].[contenthash:10][ext]',

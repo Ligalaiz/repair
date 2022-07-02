@@ -1,0 +1,57 @@
+@import '../../../styles/internals';
+
+.menu {
+  &__link {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+
+    font-family: 'Muller';
+    @include fontz(2.1rem, 1.19, $black-color);
+
+    cursor: pointer;
+    transition: all 0.2s linear;
+
+    &--contact {
+      display: flex;
+      gap: 0.5rem;
+      min-height: 2.4rem;
+      padding-bottom: 0.5rem;
+    }
+
+    &:hover {
+      color: $orange-color;
+    }
+  }
+}
+
+.img-menu {
+  position: relative;
+
+  padding-bottom: 2.6rem;
+  width: 2.7rem;
+  height: 2.7rem;
+}
+
+@media (max-width: 575.98px) {
+  .menu {
+    &__item {
+      &--contact {
+        padding: 0;
+      }
+    }
+
+    &__link {
+      font-size: 1.8rem;
+      &--contact {
+        gap: 0.5rem;
+      }
+    }
+  }
+
+  .img-menu {
+    width: 2rem;
+    height: 2rem;
+  }
+}
