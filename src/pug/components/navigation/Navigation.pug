@@ -4,7 +4,7 @@ mixin Navigation(navItems)
           each item in navItems
             li.menu__item(class= `menu__item--${item.id}`)
               a.menu__link(
-                href= `${item.pathName ? item.pathName + '.html' : '#'}`
+                href= `${item.pathName ? item.pathName + '.html' : `#${item.id}`}`
                 class= `menu__link--${item.id}`
               )
                 if item.id === 'contact'
