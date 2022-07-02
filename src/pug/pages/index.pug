@@ -1,6 +1,12 @@
 include ../libs/_layout
   body
-    p= buildTime + commitHash + version
+    //- p= buildTime + commitHash + version
     .wrapper
       +Header
       main.main
+        +Promo
+        +Fix
+        +Interior
+        +Feedback
+      +Footer
+    +Message
