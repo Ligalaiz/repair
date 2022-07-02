@@ -1,2 +1,2 @@
-mixin CommonBtn(title, cls)
-  button(class= `${cls}__btn common-btn`)= title
+mixin CommonBtn(title, cls, type = 'button')
+  button(class= `${cls}__btn common-btn`, type)= title
