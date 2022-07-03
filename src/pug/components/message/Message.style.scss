@@ -50,12 +50,16 @@
     letter-spacing: 0.065rem;
     text-transform: uppercase;
   }
+
+  &.active {
+    display: block;
+  }
 }
 
 .yes {
   stroke-dasharray: 275px;
   stroke-dashoffset: 275px;
-  animation: yes 3s linear forwards;
+  animation: yes 1s linear forwards;
 }
 
 @keyframes yes {

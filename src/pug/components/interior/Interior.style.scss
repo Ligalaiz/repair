@@ -41,9 +41,9 @@
     position: absolute;
 
     display: flex;
-    gap: 7.3rem;
 
-    transform: translateX(11.4%);
+    transition: all 0.8s linear;
+    transform: translateX(46.6rem);
   }
 
   &__slide {
@@ -51,23 +51,27 @@
 
     display: flex;
     justify-content: space-between;
-    max-width: 75rem;
+    max-width: 91.5rem;
     width: 100rem;
     padding-bottom: 50rem;
+    padding-right: 7.3rem;
 
     opacity: 0.6;
 
     transition: all 0.2s linear;
 
     &.active {
-      max-width: 100.2rem;
-      padding-left: 9rem;
+      max-width: 98.4rem;
 
       opacity: 1;
     }
   }
 
   &__desc {
+    position: relative;
+    right: 0;
+    top: 0;
+    display: none;
     max-width: 14.4rem;
 
     @include fontz(1.3rem, 1.4, $grey-color);
@@ -159,9 +163,73 @@
   }
 }
 
+.slider-controls__prev.disabled,
+.slider-controls__next.disabled {
+  cursor: default;
+
+  &:before {
+    border-color: $grey-color;
+  }
+}
+
+.slider-controls__prev.disabled {
+  &:hover:before {
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+.slider-controls__next.disabled {
+  &:hover:before {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+
+.slider-interior__slide.active > .slider-interior__desc {
+  display: block;
+}
+
+@media (max-width: 1556px) {
+  .slider-controls {
+    right: 20%;
+  }
+}
+
+@media (max-width: 1192px) {
+  .slider-controls {
+    right: 12%;
+  }
+}
+
 @media (max-width: 991.98px) {
   .interior {
     margin-bottom: 11rem;
+  }
+
+  .slider-controls {
+    right: 1%;
+  }
+}
+
+@media (max-width: 843px) {
+  .interior {
+    margin-bottom: 0;
+  }
+
+  .slider-interior__img {
+    padding-bottom: 47rem;
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  .slider-interior__slide,
+  .slider-interior__slide.active {
+    padding-top: 3rem;
+  }
+
+  .slider-interior__slide.active > .slider-interior__desc {
+    max-width: unset;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -171,9 +239,30 @@
       font-size: 3.5rem;
     }
   }
+
+  .slider-interior__slide {
+    width: 70rem;
+  }
+
+  .slider-interior__slide.active {
+    max-width: 76.4rem;
+  }
+
+  .slider-interior__slide.active > .slider-interior__desc {
+    left: unset;
+  }
 }
 
 @media (max-width: 575.98px) {
+  .slider-interior__slide,
+  .slider-interior__slide.active {
+    max-width: 50rem;
+  }
+
+  .slider-interior__slide.active > .slider-interior__desc {
+    display: none;
+  }
+
   .interior {
     margin-bottom: 6rem;
 

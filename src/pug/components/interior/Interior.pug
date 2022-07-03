@@ -7,13 +7,13 @@
       status: ''
     },
     {
-      id: 1,
+      id: 2,
       title: 'Кафельная плитка в ванной комнате в скандинавском стиле',
       desc: 'bathroom',
       status: 'active'
     },
     {
-      id: 1,
+      id: 3,
       title: 'Кафельная плитка в ванной комнате в скандинавском стиле',
       desc: 'bathroom',
       status: ''
@@ -28,14 +28,13 @@ mixin Interior
           .interior__title 3 стиля интерьера
           .interior__subtitle Скандинавский, классический и эко-стиль
       .interior__body
-        .interior__slider.slider-interior
-          ul.slider-interior__list.reset-list
+        .interior__slider.slider-interior#sliderWrap
+          ul.slider-interior__list.reset-list#slidesList
             each slide in interiorStyles
-              li.slider-interior__slide(class= `${slide.status === 'active' ? 'active' : ''}`)
+              li.slider-interior__slide(class= `${slide.status === 'active' ? 'active' : ''}`, id=`slide${slide.id}`)
                 .slider-interior__img
                   img(src=require(`../../assets/img/slide${slide.id}@1x.jpg`), alt=`${slide.desc}`)
-                if (slide.status === 'active')
-                  .slider-interior__desc= slide.title
+                .slider-interior__desc= slide.title
           .slider-interior__controls.slider-controls
             button.slider-controls__prev#btnPrev
             button.slider-controls__next#btnNext
