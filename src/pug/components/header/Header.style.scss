@@ -1,0 +1,147 @@
+@import '../../../styles/internals';
+
+.header {
+  position: fixed;
+  top: 0;
+
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 8rem) minmax(auto, 86rem) minmax(auto, 86rem) minmax(auto, 8rem) 1fr;
+  align-items: center;
+  width: 100%;
+  min-width: 31.5rem;
+  padding: 4.2rem 1.5rem 2.1rem;
+
+  background-color: transparent;
+
+  transition: all 1s linear;
+  z-index: 500;
+
+  &__logo {
+    grid-column: 3 / 4;
+    width: 21rem;
+    height: 6.8rem;
+    padding-left: 1rem;
+    margin-left: 1.8rem;
+
+    cursor: pointer;
+  }
+
+  &__menu {
+    grid-column: 4 / 5;
+  }
+
+  &.active {
+    margin-top: 0;
+    padding: 1rem 0;
+
+    background-color: $green-color-light;
+  }
+}
+
+.menu {
+  &__list {
+    justify-content: end;
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 16rem);
+  }
+
+  &__item {
+    &--contact {
+      grid-column: 2 / 3;
+      padding-right: 2.8rem;
+    }
+  }
+}
+
+.logo__link {
+  position: relative;
+
+  display: inline-block;
+  height: 6.8rem;
+  width: 20rem;
+  padding-right: 1rem;
+}
+
+.symbol__item {
+  animation: top 5s 1 forwards;
+  opacity: 0;
+
+  &--left {
+    animation-name: left;
+  }
+
+  &--right {
+    animation-name: right;
+  }
+}
+
+@keyframes top {
+  0% {
+    transform: translateY(-7px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes left {
+  0% {
+    transform: translateX(-7px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes right {
+  0% {
+    transform: translateX(7px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1104px) {
+  .header {
+    grid-template-columns: 1fr minmax(auto, 5rem) minmax(auto, 86rem) minmax(auto, 86rem) 1fr;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .header {
+    grid-template-columns: 1fr minmax(auto, 86rem) minmax(auto, 86rem) 1fr;
+    margin-top: unset;
+
+    &__container {
+      min-height: 7rem;
+      padding: 0 1.5rem;
+    }
+
+    &__logo {
+      grid-column: 2 / 3;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .logo {
+    padding: 0;
+    height: 4.5rem;
+    width: 17rem;
+
+    &__link {
+      height: 4.5rem;
+      width: 17rem;
+    }
+  }
+}

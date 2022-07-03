@@ -1,0 +1,24 @@
+@import './variables';
+
+@mixin fontz($s, $h, $c) {
+  font-size: $s;
+  line-height: $h;
+  color: $c;
+}
+
+@mixin title {
+  font-weight: 500;
+  @include fontz(4rem, 1.25, $black-color);
+  letter-spacing: -0.1px;
+}
+
+@mixin subtitle {
+  font-weight: 500;
+  @include fontz(1.6rem, 1.5, $green-color);
+  letter-spacing: 0.062rem;
+  text-transform: uppercase;
+}
+
+@mixin text {
+  @include fontz(1.6rem, 1.5, $grey-color);
+}

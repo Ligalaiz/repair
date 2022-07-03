@@ -1,0 +1,177 @@
+@import '../../../styles/internals';
+
+.fix {
+  &__container {
+    display: grid;
+    grid-template: 30.6rem 1fr / 1fr minmax(auto, 492px) minmax(auto, 492px) 1fr;
+    margin-bottom: 18.4rem;
+  }
+
+  &__head {
+    grid-column: 2 / 4;
+    align-self: end;
+    margin-bottom: 6.3rem;
+  }
+
+  &__title {
+    margin-bottom: 0.6rem;
+
+    @include title;
+  }
+
+  &__subtitle {
+    @include subtitle;
+  }
+
+  &__body {
+    grid-area: 2 / 2 / 3 / 4;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    gap: 4rem 7.9rem;
+  }
+}
+
+.item-fix {
+  padding: 3.3rem 3rem 0 0.4rem;
+  border-top: 4px solid $green-color-light;
+
+  &__title {
+    margin-bottom: 1.2rem;
+
+    font-weight: 500;
+    @include fontz(2.4rem, 1.3, $black-color);
+    letter-spacing: -0.005rem;
+  }
+
+  &__text {
+    @include text;
+  }
+
+  &--4 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid $green-color-light;
+    padding: 3.8rem 0;
+
+    .item-fix__title {
+      margin-bottom: 0.7rem;
+    }
+
+    .item-fix__text {
+      font-weight: 500;
+      @include fontz(6.4rem, 0.94, $black-color);
+      letter-spacing: -0.05rem;
+    }
+  }
+}
+
+@media (max-width: 1010.98px) {
+  .fix {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .fix {
+    &__container {
+      grid-template: 200px 1fr / 1fr 1fr;
+      margin-bottom: 7.4rem;
+    }
+
+    &__head {
+      grid-column: 1/3;
+    }
+
+    &__body {
+      grid-column: 1/3;
+      gap: 2rem 3rem;
+    }
+
+    &__item {
+      padding: 3rem 3rem 0 0;
+    }
+  }
+
+  .item-fix--4 {
+    padding: 0;
+
+    & .item-fix__text {
+      font-size: 5rem;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .fix {
+    &__container {
+      grid-template-rows: 165px 1fr;
+    }
+
+    &__body {
+      grid-template-columns: 1fr;
+    }
+
+    &__head {
+      margin-bottom: 4rem;
+    }
+
+    &__title {
+      font-size: 3.5rem;
+    }
+
+    &__item {
+      border-width: 1px;
+    }
+  }
+
+  .item-fix {
+    &__title {
+      font-size: 2rem;
+    }
+    &--4 {
+      .item-fix__title {
+        font-size: 1.8rem;
+      }
+      .item-fix__text {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .fix {
+    text-align: center;
+
+    &__container {
+      grid-template-rows: 110px 1fr;
+      margin-bottom: 5rem;
+    }
+
+    &__head {
+      margin-bottom: 3rem;
+    }
+
+    &__title {
+      font-size: 2.4rem;
+    }
+
+    &__subtitle {
+      font-size: 1.4rem;
+    }
+
+    &__item {
+      padding: 1rem 0 0;
+    }
+  }
+
+  .item-fix {
+    &--4 {
+      .item-fix__text {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}

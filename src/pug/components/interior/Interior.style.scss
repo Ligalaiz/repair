@@ -1,0 +1,194 @@
+@import '../../../styles/internals';
+
+.interior {
+  margin-bottom: 1.8rem;
+
+  &__head {
+    padding-left: 0.3rem;
+    margin-bottom: 5.2rem;
+  }
+
+  &__title {
+    margin-bottom: 0.8rem;
+
+    @include title;
+  }
+
+  &__subtitle {
+    @include subtitle;
+  }
+
+  &__body {
+    position: relative;
+
+    padding: 0 1rem;
+  }
+}
+
+.slider-interior {
+  position: relative;
+
+  min-height: 50rem;
+  max-width: 188rem;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: flex-end;
+
+  overflow: hidden;
+
+  &__list {
+    position: absolute;
+
+    display: flex;
+    gap: 7.3rem;
+
+    transform: translateX(11.4%);
+  }
+
+  &__slide {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    max-width: 75rem;
+    width: 100rem;
+    padding-bottom: 50rem;
+
+    opacity: 0.6;
+
+    transition: all 0.2s linear;
+
+    &.active {
+      max-width: 100.2rem;
+      padding-left: 9rem;
+
+      opacity: 1;
+    }
+  }
+
+  &__desc {
+    max-width: 14.4rem;
+
+    @include fontz(1.3rem, 1.4, $grey-color);
+  }
+
+  &__panel {
+    position: absolute;
+    right: 28%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    height: 100%;
+  }
+
+  &__img {
+    position: relative;
+
+    padding-bottom: 50rem;
+    max-width: 75rem;
+    width: 100%;
+  }
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 0;
+  right: 27.4%;
+
+  display: flex;
+  gap: 3rem;
+  width: 8.9rem;
+  height: 4.4rem;
+
+  &__prev,
+  &__next {
+    position: relative;
+
+    width: 7.3rem;
+    height: 4.4rem;
+    border: unset;
+
+    background-color: transparent;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+
+      width: 3rem;
+      height: 3rem;
+      border: 0.3rem solid $orange-color;
+
+      transition: all 0.2s linear;
+    }
+  }
+
+  &__prev {
+    &:before {
+      left: 40%;
+
+      border-top: none;
+      border-right: none;
+
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &:hover:before {
+      transform: translateY(-50%) rotate(45deg) skew(-10deg, -10deg);
+    }
+  }
+
+  &__next {
+    &:before {
+      right: 40%;
+
+      border-top: none;
+      border-left: none;
+
+      transform: translateY(-50%) rotate(-45deg);
+    }
+
+    &:hover:before {
+      transform: translateY(-50%) rotate(-45deg) skew(10deg, 10deg);
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .interior {
+    margin-bottom: 11rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .interior {
+    &__title {
+      font-size: 3.5rem;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .interior {
+    margin-bottom: 6rem;
+
+    &__head {
+      margin-bottom: 3rem;
+
+      text-align: center;
+    }
+
+    &__title {
+      font-size: 2.4rem;
+    }
+
+    &__subtitle {
+      font-size: 1.4rem;
+    }
+  }
+}

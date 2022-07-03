@@ -1,0 +1,107 @@
+@import '../../../styles/internals';
+
+.message {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+
+  display: none;
+  max-width: 97.6rem;
+  min-width: 32rem;
+  width: 100%;
+  max-height: 63.9rem;
+  height: 100%;
+
+  background-color: $white-color;
+  box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: 3px solid $green-color-light;
+  }
+
+  &__title {
+    padding: 0 1.5rem;
+    @include fontz(4rem, 1.25, $black-color);
+    text-align: center;
+  }
+
+  &__img {
+    position: relative;
+
+    max-width: 19.4rem;
+    width: 100%;
+    height: 12.8rem;
+    margin-bottom: 4.1rem;
+  }
+
+  &__text {
+    max-width: 28rem;
+
+    @include fontz(1.6rem, 1.5, $black-color);
+    text-align: center;
+    letter-spacing: 0.065rem;
+    text-transform: uppercase;
+  }
+}
+
+.yes {
+  stroke-dasharray: 275px;
+  stroke-dashoffset: 275px;
+  animation: yes 3s linear forwards;
+}
+
+@keyframes yes {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .message {
+    &__title {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .message {
+    max-height: 45rem;
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__img {
+      max-width: 15rem;
+      height: 10rem;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .message {
+    max-height: 35rem;
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__text {
+      font-size: 1.4rem;
+    }
+
+    &__img {
+      max-width: 13rem;
+      height: 9rem;
+    }
+  }
+}

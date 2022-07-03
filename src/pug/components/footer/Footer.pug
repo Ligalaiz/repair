@@ -1,0 +1,39 @@
+-
+  const socialLinks = [
+    {
+      id: 1,
+      link: '#',
+      name: 'fb'
+    },
+    {
+      id: 2,
+      link: '#',
+      name: 'vk'
+    },
+    {
+      id: 3,
+      link: '#',
+      name: 'inst'
+    },
+  ]
+
+mixin Footer
+  footer.footer#contact
+    .footer__container.container
+      ul.footer__social.social-footer.reset-list
+        each link in socialLinks
+          li.social-footer__item
+            a.social-footer__link(href= `${link.link}` class= `social-footer__link--${link.name}`)
+      .footer__promo.promo-footer
+        .promo-footer__title Следите за нашим развитием
+        .promo-footer__subtitle Подпишитесь на наши аккаунты в соц. сетях, знакомьтесь с нашими проектами и тем, что нас вдохновляет
+      ul.footer__contacts.contacts-footer.reset-list
+        li.contacts-footer__wrap.contacts-footer__wrap--left
+          a.contacts-footer__item.contacts-footer__item--phone(href="tel:7819035445") +7 (812) 903-54-45
+        li.contacts-footer__wrap.contacts-footer__wrap--center
+          p.contacts-footer__item.contacts-footer__item--address Ул. Галерная, д 55,
+          p.contacts-footer__item.contacts-footer__item--city Санкт-Петербург
+        li.contacts-footer__wrap.contacts-footer__wrap--right
+          a.contacts-footer__item.contacts-footer__item--email(href= "mailto:hello.afrian@gmail.com") 9035445@gmail.com
+    .footer__copyright
+      p © FIX Ремонт, 2016
