@@ -142,6 +142,13 @@ svg {
   background-clip: padding-box;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
 @media (max-width: 575.98px) {
   .wrapper {
     grid-template-rows: 1fr minmax(auto, 49rem);
