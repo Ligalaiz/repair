@@ -14,9 +14,7 @@ const pages = join(src, 'pug/pages');
 const PAGES = fs.readdirSync(pages).filter((fileName) => fileName.endsWith('.pug'));
 
 const getTitle = (val) => {
-  if (val.match(/index/g)) return 'New Automation Tool';
-  if (val.match(/blog/g)) return 'About Us';
-  if (val.match(/contact/g)) return 'Contact Us';
+  if (val.match(/index/g)) return 'Repair Flats';
 };
 
 module.exports = merge(common, {
